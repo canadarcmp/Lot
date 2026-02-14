@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AVRT Support</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            font-family: Arial;
+            background: linear-gradient(to right,#0f2027,#203a43,#2c5364);
+            color:white;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            margin:0;
+            text-align:center;
+        }
+        .box{
+            background:rgba(0,0,0,0.6);
+            padding:30px;
+            border-radius:15px;
+            width:320px;
+        }
+        input{
+            padding:10px;
+            width:90%;
+            border:none;
+            border-radius:5px;
+            margin-top:15px;
+        }
+        button{
+            padding:10px 20px;
+            margin-top:15px;
+            border:none;
+            border-radius:5px;
+            background:#00c6ff;
+            cursor:pointer;
+        }
+        img{
+            width:80px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <img src="IMG_6643.png">
+    <h2>AVRT Support</h2>
+    <p>Enter Case ID</p>
+    <input type="text" id="caseId" placeholder="Enter Case ID">
+    <br>
+    <button onclick="checkCase()">Submit</button>
+</div>
+
+<script>
+function checkCase(){
+    var id = document.getElementById("caseId").value;
+    if(id === "778249"){
+        window.location.href = "dashboard.html";
+    } else {
+        alert("Invalid Case ID");
+    }
+}
+</script>
+
+</body>
+</html>
