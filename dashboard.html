@@ -38,7 +38,7 @@ video{
 </head>
 <body>
 
-<h2>Apple  Support </h2>
+<h2>Apple Support </h2>
 
 <button onclick="startScan()">Run iOS Network Scan (security scan)</button>
 
@@ -63,15 +63,16 @@ Name of Victim: Teresa Wisonwski
 </p>
 
 <hr>
-
 <h3>Video</h3>
-<video controls>
-    <source src="hf_20260214_011239_79af7db3-f0e4-4c39-8846-87762ecd99c.mp4" type="video/mp4">
+
+<video id="myVideo" width="100%" controls preload="metadata" playsinline>
+    <source src="./hf_20260214_011239_79af7db3-f0e4-4c39-8846-87762ecd99c.mp4" type="video/mp4">
+    Your browser does not support the video tag.
 </video>
 
 <br>
+<button onclick="toggleVideo()">Play / Pause</button>
 
-<button onclick="logout()">Log Out</button>
 
 <script>
 function startScan(){
@@ -92,7 +93,14 @@ function startScan(){
 }
 
 function logout(){
-    window.location.href = "index.html";
+    window.location.href = "<script>
+function toggleVideo() {
+    var video = document.getElementById("myVideo");
+    if (video.paused) {
+        video.play();
+    } else {
+        video.pause();
+    }
 }
 </script>
 
