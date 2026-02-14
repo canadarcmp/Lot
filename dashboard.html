@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Apple Support - </title>
+<title>Apple Support</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body{
@@ -38,7 +38,7 @@ video{
 </head>
 <body>
 
-<h2>Apple Support </h2>
+<h2>Apple Support</h2>
 
 <button onclick="startScan()">Run iOS Network Scan (security scan)</button>
 
@@ -63,6 +63,7 @@ Name of Victim: Teresa Wisonwski
 </p>
 
 <hr>
+
 <h3>Video</h3>
 
 <video id="myVideo" width="100%" controls preload="metadata" playsinline>
@@ -72,7 +73,8 @@ Name of Victim: Teresa Wisonwski
 
 <br>
 <button onclick="toggleVideo()">Play / Pause</button>
-
+<br>
+<button onclick="logout()">Log Out</button>
 
 <script>
 function startScan(){
@@ -83,17 +85,15 @@ function startScan(){
     let interval = setInterval(function(){
         if(width >= 100){
             clearInterval(interval);
-            status.innerHTML = "Demo Scan Completed ✔";
+            status.innerHTML = "Scan Completed ✔";
         } else {
             width++;
             bar.style.width = width + "%";
             status.innerHTML = "Analyzing files... " + width + "%";
         }
-    }, 2000); // slow progress simulation
+    }, 200);
 }
 
-function logout(){
-    window.location.href = "<script>
 function toggleVideo() {
     var video = document.getElementById("myVideo");
     if (video.paused) {
@@ -101,6 +101,10 @@ function toggleVideo() {
     } else {
         video.pause();
     }
+}
+
+function logout(){
+    window.location.href = "index.html";
 }
 </script>
 
