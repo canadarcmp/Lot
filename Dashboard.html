@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AVRT Support - Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+    font-family:Arial;
+    background:#111;
+    color:white;
+    padding:20px;
+}
+button{
+    padding:10px 15px;
+    margin:10px 0;
+    border:none;
+    border-radius:5px;
+    background:#00c6ff;
+    cursor:pointer;
+}
+.progress{
+    width:100%;
+    background:#333;
+    border-radius:5px;
+    overflow:hidden;
+}
+.bar{
+    width:0%;
+    height:20px;
+    background:#00ff88;
+}
+video{
+    width:100%;
+    max-width:500px;
+    margin-top:15px;
+}
+</style>
+</head>
+<body>
+
+<h2>AVRT Support - Demo Simulation</h2>
+
+<button onclick="startScan()">Run iOS Network Scan (Demo)</button>
+
+<div class="progress">
+    <div class="bar" id="bar"></div>
+</div>
+
+<p id="status"></p>
+
+<hr>
+
+<h3>Case Details</h3>
+<p>
+Technician Name: Jacob Miller<br>
+Case ID: 778249<br>
+Company Name: Apito<br><br>
+
+Number of Token: 195<br>
+Number of Viti: 29<br>
+Security Level: 17%<br>
+Name of VI: Teresa Wisonwski
+</p>
+
+<hr>
+
+<h3>Video</h3>
+<video controls>
+    <source src="hf_20260214_011239_79af7db3-f0e4-4c39-8846-87762ecd99c.mp4" type="video/mp4">
+</video>
+
+<br>
+
+<button onclick="logout()">Log Out</button>
+
+<script>
+function startScan(){
+    let bar = document.getElementById("bar");
+    let status = document.getElementById("status");
+    let width = 0;
+
+    let interval = setInterval(function(){
+        if(width >= 100){
+            clearInterval(interval);
+            status.innerHTML = "Demo Scan Completed ✔";
+        } else {
+            width++;
+            bar.style.width = width + "%";
+            status.innerHTML = "Analyzing files... " + width + "%";
+        }
+    }, 2000); // slow progress simulation
+}
+
+function logout(){
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
